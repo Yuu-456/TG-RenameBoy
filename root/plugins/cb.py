@@ -58,9 +58,6 @@ async def renamer(c,m,as_file=False):
 
   await bot_msg.delete() # delete name-req msg 
 
-  if len(new_f_name) > 64:
-      return await m.reply_text(text=f"Limits of telegram file name is 64 charecters only\nReduce some and try again.")
-
   d_msg = await m.reply_text(Translation.DOWNLOAD_MSG,True)
   d_location = Config.DOWNLOAD_LOCATION + "/" + str(m.chat.id) + "/"
   d_time = time.time()
